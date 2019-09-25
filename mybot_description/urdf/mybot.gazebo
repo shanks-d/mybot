@@ -3,19 +3,19 @@
 
 
   <gazebo>
-    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-      <legacyMode>false</legacyMode>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>20</updateRate>
-      <leftJoint>left_wheel_hinge</leftJoint>
-      <rightJoint>right_wheel_hinge</rightJoint>
-      <wheelSeparation>0.4</wheelSeparation>
-      <wheelDiameter>0.1</wheelDiameter>
-      <torque>20</torque>
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so"> <!-- Control of quadrature base using Twist Msg -->
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/mybot</robotNamespace>
+      <leftFrontJoint>left_wheel_f_hinge</leftFrontJoint>
+      <rightFrontJoint>right_wheel_f_hinge</rightFrontJoint>
+      <leftRearJoint>left_wheel_b_hinge</leftRearJoint>
+      <rightRearJoint>right_wheel_b_hinge</rightRearJoint>
+      <wheelSeparation>0.3</wheelSeparation>
+      <wheelDiameter>0.2</wheelDiameter>
       <robotBaseFrame>chassis</robotBaseFrame>
+      <torque>5</torque>
+      <topicName>cmd_vel</topicName>
+      <broadcastTF>true</broadcastTF>
     </plugin>
   </gazebo>
 
@@ -24,14 +24,21 @@
     <material>Gazebo/Orange</material>
   </gazebo>
 
-  <gazebo reference="left_wheel">
+  <gazebo reference="left_wheel_f">
     <material>Gazebo/Blue</material>
   </gazebo>
 
-  <gazebo reference="right_wheel">
+  <gazebo reference="right_wheel_f">
     <material>Gazebo/Blue</material>
   </gazebo>
 
+  <gazebo reference="left_wheel_b">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel_b">
+    <material>Gazebo/Blue</material>
+  </gazebo>
 
   <gazebo reference="camera">
     <material>Gazebo/Green</material>
@@ -77,8 +84,8 @@
           <horizontal>
             <samples>720</samples>
             <resolution>1</resolution>
-            <min_angle>-1.570796</min_angle>
-            <max_angle>1.570796</max_angle>
+            <min_angle>-3.141592</min_angle>
+            <max_angle>3.141592</max_angle>
           </horizontal>
         </scan>
         <range>

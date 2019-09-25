@@ -1,0 +1,6 @@
+<launch>
+
+  <include file="$(find mybot_gazebo)/launch/mybot_world.launch" />
+  <include file="$(find mybot_description)/launch/mybot_rviz.launch" />
+
+</launch>
