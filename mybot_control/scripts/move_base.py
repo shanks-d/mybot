@@ -39,10 +39,10 @@ def callback(key):
         vel_msg.angular.z = 0.0
     elif key.data == 'a':
         vel_msg.linear.x = 0.0
-        vel_msg.angular.z = 1.0
+        vel_msg.angular.z = 2.0
     elif key.data == 'd':
         vel_msg.linear.x = 0.0
-        vel_msg.angular.z = -1.0
+        vel_msg.angular.z = -2.0
     print "Key: ", key.data, "Speed: ", speed
 
 if __name__ == '__main__':
