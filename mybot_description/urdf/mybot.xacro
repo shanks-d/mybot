@@ -187,38 +187,38 @@
   </link>
 
   <joint type="continuous" name="left_wheel_f_hinge">
-    <origin xyz="0.15 0.15 0" rpy="0 0 0"/>
+    <origin xyz="0.15 -0.15 -0.05" rpy="0 0 0"/>
     <child link="left_wheel_f"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <limit effort="10" velocity="10"/>
+    <limit effort="100" velocity="100"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
   <joint type="continuous" name="right_wheel_f_hinge">
-    <origin xyz="0.15 -0.15 0" rpy="0 0 0"/>
+    <origin xyz="0.15 0.15 -0.05" rpy="0 0 0"/>
     <child link="right_wheel_f"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <limit effort="10" velocity="10"/>
+    <limit effort="100" velocity="100"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
   <joint type="continuous" name="left_wheel_b_hinge">
-    <origin xyz="-0.15 0.15 0" rpy="0 0 0"/>
+    <origin xyz="-0.15 -0.15 -0.05" rpy="0 0 0"/>
     <child link="left_wheel_b"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <limit effort="10" velocity="10"/>
+    <limit effort="100" velocity="100"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
   <joint type="continuous" name="right_wheel_b_hinge">
-    <origin xyz="-0.15 -0.15 0" rpy="0 0 0"/>
+    <origin xyz="-0.15 0.15 -0.05" rpy="0 0 0"/>
     <child link="right_wheel_b"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <limit effort="10" velocity="10"/>
+    <limit effort="100" velocity="100"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
@@ -256,7 +256,7 @@
 
   <joint name="hokuyo_joint" type="fixed">
     <axis xyz="0 1 0" />
-    <origin xyz="0 0 .105" rpy="0 0 0"/>
+    <origin xyz="0 0 .1" rpy="0 0 0"/>
     <parent link="chassis"/>
     <child link="hokuyo"/>
   </joint>

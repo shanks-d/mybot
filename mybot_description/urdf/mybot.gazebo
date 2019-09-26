@@ -5,7 +5,7 @@
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so"> <!-- Control of quadrature base using Twist Msg -->
       <updateRate>100.0</updateRate>
-      <robotNamespace>/mybot</robotNamespace>
+      <robotNamespace>/</robotNamespace>
       <leftFrontJoint>left_wheel_f_hinge</leftFrontJoint>
       <rightFrontJoint>right_wheel_f_hinge</rightFrontJoint>
       <leftRearJoint>left_wheel_b_hinge</leftRearJoint>
@@ -13,7 +13,7 @@
       <wheelSeparation>0.3</wheelSeparation>
       <wheelDiameter>0.2</wheelDiameter>
       <robotBaseFrame>chassis</robotBaseFrame>
-      <torque>5</torque>
+      <torque>10</torque>
       <topicName>cmd_vel</topicName>
       <broadcastTF>true</broadcastTF>
     </plugin>
@@ -21,23 +21,23 @@
 
 
   <gazebo reference="chassis">
-    <material>Gazebo/Orange</material>
+    <material>Gazebo/Blue</material>
   </gazebo>
 
   <gazebo reference="left_wheel_f">
-    <material>Gazebo/Blue</material>
+    <material>orange</material>
   </gazebo>
 
   <gazebo reference="right_wheel_f">
-    <material>Gazebo/Blue</material>
+    <material>black</material>
   </gazebo>
 
   <gazebo reference="left_wheel_b">
-    <material>Gazebo/Blue</material>
+    <material>red</material>
   </gazebo>
 
   <gazebo reference="right_wheel_b">
-    <material>Gazebo/Blue</material>
+    <material>green</material>
   </gazebo>
 
   <gazebo reference="camera">
